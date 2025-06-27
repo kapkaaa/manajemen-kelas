@@ -20,38 +20,42 @@ namespace Manajemen_kelas
 
         private void Login_Load(object sender, EventArgs e)
         {
-            textBox1.Text = "Masukkan nama anda";
-            textBox1.ForeColor = Color.Gray;
 
-            textBox1.Enter += RemoveText;
-            textBox1.Leave += AddText;
-
-            int borderRadius = 20; // Semakin besar, semakin melengkung
-            GraphicsPath path = new GraphicsPath();
-            path.AddArc(0, 0, borderRadius, borderRadius, 180, 90);
-            path.AddArc(button1.Width - borderRadius, 0, borderRadius, borderRadius, 270, 90);
-            path.AddArc(button1.Width - borderRadius, button1.Height - borderRadius, borderRadius, borderRadius, 0, 90);
-            path.AddArc(0, button1.Height - borderRadius, borderRadius, borderRadius, 90, 90);
-            path.CloseAllFigures();
-
-            button1.Region = new Region(path);
+            BuatRoundedButton(button1);
+            BuatRoundedButton(button2);
         }
 
-        private void RemoveText(object sender, EventArgs e)
+        private void BuatRoundedButton(Button btn)
         {
-            if (textBox1.Text == "Masukkan nama anda")
+            int borderRadius = btn.Height / 2;
+
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(0, 0, borderRadius * 2, borderRadius * 2, 180, 90);
+            path.AddArc(btn.Width - borderRadius * 2, 0, borderRadius * 2, borderRadius * 2, 270, 90);
+            path.AddArc(btn.Width - borderRadius * 2, btn.Height - borderRadius * 2, borderRadius * 2, borderRadius * 2, 0, 90);
+            path.AddArc(0, btn.Height - borderRadius * 2, borderRadius * 2, borderRadius * 2, 90, 90);
+            path.CloseFigure();
+
+            btn.Region = new Region(path);
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "Masukkan Nama Anda")
             {
                 textBox1.Text = "";
+
                 textBox1.ForeColor = Color.Black;
             }
         }
 
-        private void AddText(object sender, EventArgs e)
+        private void textBox1_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            if (textBox1.Text == "")
             {
-                textBox1.Text = "Masukkan nama anda";
-                textBox1.ForeColor = Color.Gray;
+                textBox1.Text = "Masukkan Nama Anda";
+
+                textBox1.ForeColor = Color.Silver;
             }
         }
     }
