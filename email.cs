@@ -18,7 +18,7 @@ namespace Manajemen_kelas
             {
                 MailMessage mail = new MailMessage();
                 SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
-                mail.From = new MailAddress("erpeel018@gmail.com"); // Ganti dengan email kamu
+                mail.From = new MailAddress("cerpeel@gmail.com"); 
                 mail.To.Add(emailTujuan);
                 mail.Subject = "Token Login Anda";
                 mail.IsBodyHtml = true;
@@ -33,7 +33,7 @@ namespace Manajemen_kelas
                             "Tim Manajemen Kelas";
 
                 smtpServer.Port = 587;
-                smtpServer.Credentials = new NetworkCredential("erpeel018@gmail.com", "zjmknqxgqgsdksul"); // Ganti dengan email & app password kamu
+                smtpServer.Credentials = new NetworkCredential("cerpeel@gmail.com", "fsrckfgnhitpnsge"); 
                 smtpServer.EnableSsl = true;
 
                 smtpServer.Send(mail);
