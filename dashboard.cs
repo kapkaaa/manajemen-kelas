@@ -107,6 +107,8 @@ namespace Manajemen_kelas
 
             panel3.Controls.Add(childForm);
             childForm.Show();
+
+            label1.Text = "Dashboard " + childForm.Name;
         }
 
     }

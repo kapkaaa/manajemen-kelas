@@ -113,9 +113,9 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Location = new System.Drawing.Point(35, 120);
+            this.panel3.Location = new System.Drawing.Point(0, 97);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(735, 287);
+            this.panel3.Size = new System.Drawing.Size(800, 354);
             this.panel3.TabIndex = 1;
             // 
             // dashboard
