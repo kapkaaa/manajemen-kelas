@@ -122,8 +122,8 @@ namespace Manajemen_kelas
             }
 
             // Kirim token ke email yang sudah ditemukan
-            email mail = new email();
-            mail.SendEmail(emailTujuan, tokenn, username);
+            //email mail = new email();
+            //mail.SendEmail(emailTujuan, tokenn, username);
             //MessageBox.Show("berhasil");
             token tkn = new token();
             tkn.Show();
