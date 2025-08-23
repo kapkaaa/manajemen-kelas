@@ -41,6 +41,7 @@ namespace Manajemen_kelas
         private void bendahara_Load(object sender, EventArgs e)
         {
             BuatRoundedButton(button1);
+            BuatRoundedButton(button2);
         }
     }
 }
