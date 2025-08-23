@@ -20,7 +20,8 @@ namespace Manajemen_kelas
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            input_kas kas = new input_kas();
+            kas.Show();
         }
 
         private void BuatRoundedButton(Button btn)
