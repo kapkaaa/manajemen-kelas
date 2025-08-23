@@ -90,7 +90,7 @@
             // 
             this.day.AutoSize = true;
             this.day.ForeColor = System.Drawing.SystemColors.Control;
-            this.day.Location = new System.Drawing.Point(19, 22);
+            this.day.Location = new System.Drawing.Point(12, 22);
             this.day.Name = "day";
             this.day.Size = new System.Drawing.Size(0, 13);
             this.day.TabIndex = 3;
@@ -99,7 +99,7 @@
             // 
             this.time.AutoSize = true;
             this.time.ForeColor = System.Drawing.SystemColors.Control;
-            this.time.Location = new System.Drawing.Point(50, 48);
+            this.time.Location = new System.Drawing.Point(43, 48);
             this.time.Name = "time";
             this.time.Size = new System.Drawing.Size(0, 13);
             this.time.TabIndex = 2;
