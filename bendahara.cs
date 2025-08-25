@@ -18,10 +18,21 @@ namespace Manajemen_kelas
             InitializeComponent();
         }
 
+        public void panelform(Form form)
+        {
+            panel1.Controls.Clear();
+
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+
+            panel1.Controls.Add(form);
+            form.Show();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            input_kas kas = new input_kas();
-            kas.Show();
+            panelform(new input_kas(this));
         }
 
         private void BuatRoundedButton(Button btn)
@@ -46,6 +57,28 @@ namespace Manajemen_kelas
         private void button3_Click(object sender, EventArgs e)
         {
 
+            Form1 main = new Form1();
+            main.Show();
+            this.Close();
+            Session.Clear();
+            
+        }   
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Form1 main = new Form1();
+            main.Show();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            panelform(new laporkas(this));
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            panelform(new profil(this));
         }
     }
 }
