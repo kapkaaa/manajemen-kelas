@@ -40,8 +40,12 @@ namespace Manajemen_kelas
 
         private void bendahara_Load(object sender, EventArgs e)
         {
-            BuatRoundedButton(button1);
-            BuatRoundedButton(button2);
+            BuatRoundedButton(button3);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
