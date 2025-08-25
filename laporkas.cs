@@ -12,9 +12,18 @@ namespace Manajemen_kelas
 {
     public partial class laporkas : Form
     {
-        public laporkas()
+
+        private bendahara bendahara;
+
+        public laporkas(bendahara parent)
         {
             InitializeComponent();
+            bendahara = parent;
+        }
+
+        private void laporkas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
