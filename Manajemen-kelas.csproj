@@ -139,11 +139,23 @@
       <DependentUpon>input-kas.cs</DependentUpon>
     </Compile>
     <Compile Include="koneksi.cs" />
+    <Compile Include="laporkas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="laporkas.Designer.cs">
+      <DependentUpon>laporkas.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="profil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="profil.Designer.cs">
+      <DependentUpon>profil.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -181,8 +193,17 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="input-kas.resx">
+      <DependentUpon>input-kas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="laporkas.resx">
+      <DependentUpon>laporkas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="profil.resx">
+      <DependentUpon>profil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
