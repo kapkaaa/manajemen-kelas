@@ -12,9 +12,20 @@ namespace Manajemen_kelas
 {
     public partial class profil : Form
     {
-        public profil()
+
+        private bendahara bendahara;
+
+
+        public profil(bendahara parent)
         {
             InitializeComponent();
+
+            bendahara = parent;
+        }
+
+        private void profil_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
