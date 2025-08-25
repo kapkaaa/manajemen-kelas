@@ -15,9 +15,13 @@ namespace Manajemen_kelas
 {
     public partial class token : Form
     {
-        public token()
+
+        private Form1 utama;
+
+        public token(Form1 parent)
         {
             InitializeComponent();
+            utama = parent;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -109,6 +113,7 @@ namespace Manajemen_kelas
                             dashboard home = new dashboard();
                             home.Show();
                             this.Close();
+                            utama.Hide();
                         }
 
                     }
