@@ -28,6 +28,27 @@ namespace Manajemen_kelas
 
             panel1.Controls.Add(form);
             form.Show();
+
+            if (form is input_kas)
+            {
+                label2.Text = "PEMBAYARAN KAS";
+            }
+            else if (form is laporkas)
+            {
+                label2.Text = "LAPORAN KAS";
+            }
+            else if (form is profil)
+            {
+                label2.Text = "PROFIL SISWA";
+            }
+            else if (form is pengeluaran_kas)
+            {
+                label2.Text = "PENGELUARAN KAS";
+            }
+            else
+            {
+                label2.Text = "";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -73,10 +94,15 @@ namespace Manajemen_kelas
 
         private void button2_Click(object sender, EventArgs e)
         {
-            panelform(new laporkas(this));
+            panelform(new pengeluaran_kas(this));
         }
 
         private void button4_Click(object sender, EventArgs e)
+        {
+            panelform(new laporkas(this));
+        }
+
+        private void button5_Click(object sender, EventArgs e)
         {
             panelform(new profil(this));
         }
