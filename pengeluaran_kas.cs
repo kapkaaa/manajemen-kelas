@@ -12,9 +12,17 @@ namespace Manajemen_kelas
 {
     public partial class pengeluaran_kas : Form
     {
-        public pengeluaran_kas()
+        private bendahara bendahara;
+
+        public pengeluaran_kas(bendahara parent)
         {
             InitializeComponent();
+            bendahara = parent;
+        }
+
+        private void pengeluaran_kas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
