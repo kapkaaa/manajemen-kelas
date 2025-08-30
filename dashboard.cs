@@ -30,20 +30,6 @@ namespace Manajemen_kelas
             int role = Session.CurrentRole;
 
             rolesForm();
-                //if (role == 1)
-                //{
-                //    LoadFormToPanel(new walas());
-                //}
-                //elseif (role  == 3) {
-                //    LoadFormToPanel (new sekretaris());
-                //}
-                //elseif (role == 4) {
-                //    LoadFormToPanel(new bendahara());
-                //}
-                //elseif (role == 5) {
-                //    LoadFormToPanel(new siswa());
-                //}
-
 
             timer1.Interval = 1000;
             timer1.Start();
@@ -60,7 +46,7 @@ namespace Manajemen_kelas
             try
             {
 
-                using (MySqlCommand cmd = new MySqlCommand("select * from roles where role_id = @role", conn))
+                using (MySqlCommand cmd = new MySqlCommand("select * from role where id = @role", conn))
                 {
                     cmd.Parameters.AddWithValue("@role", Session.CurrentRole);
                     using (MySqlDataReader  reader = cmd.ExecuteReader())
