@@ -34,6 +34,7 @@ namespace Manajemen_kelas
             // atau jika ingin ada hari & bulan dalam bahasa Indonesia
             dtp.CustomFormat = "dddd, dd MMMM yyyy";
 
+            data();
         }
 
         private void textBox1_Enter(object sender, EventArgs e)
@@ -58,7 +59,16 @@ namespace Manajemen_kelas
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            search(textBox1.Text);
+            string keyword = textBox1.Text.Trim();
+
+            if (string.IsNullOrEmpty(keyword))
+            {
+                data();
+            }
+            else
+            {
+                search(keyword);
+            }
         }
 
         private void search(string keyword)
@@ -70,7 +80,7 @@ namespace Manajemen_kelas
             {
                 MySqlConnection conn = k.get();
 
-                using (MySqlCommand cmd = new MySqlCommand("select * from pending_kas_siswa p join users u ON p.user_id = u.id where u.nama LIKE @keyword"))
+                using (MySqlCommand cmd = new MySqlCommand("select * from kas_siswa p join users u ON p.user_id = u.id where u.nama LIKE @keyword"))
                 {
                     cmd.Parameters.AddWithValue("keyword", "%" + keyword + "%");
                     MySqlDataAdapter da = new MySqlDataAdapter();
@@ -98,10 +108,24 @@ namespace Manajemen_kelas
             {
                 MySqlConnection conn = k.get();
 
-                using (MySqlCommand cmd = new MySqlCommand("select * from kas_siswa ks join users u on p.user_id = u.id "))
+                using (MySqlCommand cmd = new MySqlCommand("select u.nama, ks.*, s.semester from kas_siswa ks join users u on ks.user_id = u.id join semester s on ks.semester_id = s.id", conn))
                 {
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
 
+                    dataGridView1.DataSource= dt;
+                    dataGridView1.Columns["id"].Visible = false;
+                    dataGridView1.Columns["user_id"].Visible = false;
+
+                    dataGridView1.Columns["kode"].HeaderText = "Kode";
+                    dataGridView1.Columns["nama"].HeaderText = "Nama Siswa";
+                    dataGridView1.Columns["jumlah"].HeaderText = "Kas";
+                    dataGridView1.Columns["tanggal"].HeaderText = "Tanggal bayar";
+                    dataGridView1.Columns["semester"].HeaderText = "Semester";
+                    dataGridView1.Columns["keterangan"].HeaderText = "Keterangan";
                 }
+                
             } catch (Exception ex)
             {
                 MessageBox.Show("error" + ex.Message);
@@ -110,6 +134,23 @@ namespace Manajemen_kelas
             { 
                 k.close(); 
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            clear();
+        }
+
+        private void clear()
+        {
+            tbjl.Clear();
+            tbkd.Clear();
+            tbktr.Clear();
+            tbnm.Clear();
+            cmbsmt.SelectedIndex = -1;
+            dtp.Value = DateTime.Now;
+            data();
+            textBox1.Clear();
         }
     }
 }
